@@ -1,17 +1,19 @@
-package com.totalcross.sample.showData.ui;
+package com.totalcross.sample.showData;
 
 import totalcross.ui.MainWindow;
 import totalcross.ui.font.Font;
 
+import com.totalcross.sample.showData.ui.ShowDataContainer;
 import com.totalcross.sample.showData.util.Fonts;
 
 import totalcross.sys.Settings;
+import totalcross.sys.Vm;
 
-public class ShowDataMainWindow extends MainWindow {
+public class ShowData extends MainWindow {
     public static final String version = "1.0.0";
 
     
-    public ShowDataMainWindow() {
+    public ShowData() {
         super("Show Data", NO_BORDER);
         setUIStyle(Settings.FLAT_UI);
         setDefaultFont(Font.getFont(Fonts.FONT_DEFAULT_SIZE));

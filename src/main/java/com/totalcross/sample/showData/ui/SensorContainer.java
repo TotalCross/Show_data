@@ -16,7 +16,7 @@ import totalcross.ui.layout.VBox;
 
 public class SensorContainer extends Container {
     @Override
-    public void initUI(){
+    public void initUI() {
         super.initUI();
         ScrollContainer sc = new ScrollContainer(true, true);
         sc.transparentBackground = true;
@@ -64,7 +64,7 @@ public class SensorContainer extends Container {
 
         Edit SensorAS = new Edit();
         SensorAS.caption = "GPIO IN"; // Edit text
-        SensorAS.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% 
+        SensorAS.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%
         SensorAS.setMode(Edit.CURRENCY); // set mode numeric
         SensorAS.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
         SensorAS.setForeColor(Color.BLACK);
@@ -73,7 +73,7 @@ public class SensorContainer extends Container {
 
         Edit PinAS = new Edit();
         PinAS.caption = "GPIO OUT"; // Edit text
-        PinAS.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% 
+        PinAS.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%
         PinAS.setMode(Edit.CURRENCY); // set mode numeric
         PinAS.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
         PinAS.setForeColor(Color.BLACK);
@@ -82,7 +82,7 @@ public class SensorContainer extends Container {
 
         Edit onvalue = new Edit();
         onvalue.caption = "On Value";
-        onvalue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% 
+        onvalue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%
         onvalue.setMode(Edit.CURRENCY); // set mode numeric
         onvalue.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
         onvalue.setForeColor(Color.BLACK);
@@ -91,7 +91,7 @@ public class SensorContainer extends Container {
 
         Edit offvalue = new Edit();
         offvalue.caption = "Off Value";
-        offvalue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% 
+        offvalue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%
         offvalue.setMode(Edit.CURRENCY); // set mode numeric
         offvalue.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
         offvalue.setForeColor(Color.BLACK);
@@ -100,12 +100,11 @@ public class SensorContainer extends Container {
 
         Button SetSensorconfig = new Button("Save");
         SetSensorconfig.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));// set text size 3% of screen
-                                                                                          // size
+                                                                                 // size
         SetSensorconfig.setBackForeColors(Colors.BLUE, Colors.WHITE);
 
-        sc.add(Sensors, CENTER, TOP,sc.getWidth(),MaterialConstants.EDIT_HEIGHT);
+        sc.add(Sensors, CENTER, TOP, sc.getWidth(), MaterialConstants.EDIT_HEIGHT);
 
-        
         VBox boxi = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
         boxi.add(indicators1);
         boxi.add(indicators2);
@@ -113,8 +112,9 @@ public class SensorContainer extends Container {
         boxi.add(indicators4);
         boxi.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(boxi,RIGHT-MaterialConstants.BORDER_SPACING,AFTER+MaterialConstants.COMPONENT_SPACING,
-            MaterialConstants.EDIT_HEIGHT,(MaterialConstants.COMPONENT_SPACING+MaterialConstants.EDIT_HEIGHT)*4);
+        sc.add(boxi, RIGHT - MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                MaterialConstants.EDIT_HEIGHT,
+                (MaterialConstants.COMPONENT_SPACING + MaterialConstants.EDIT_HEIGHT) * 4);
 
         VBox boxv = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
         boxv.add(values1);
@@ -123,8 +123,7 @@ public class SensorContainer extends Container {
         boxv.add(values4);
 
         boxv.setSpacing(MaterialConstants.COMPONENT_SPACING);
-        sc.add(boxv,BEFORE - MaterialConstants.BORDER_SPACING, SAME,
-        PREFERRED,boxi.getHeight());
+        sc.add(boxv, BEFORE - MaterialConstants.BORDER_SPACING, SAME, PREFERRED, boxi.getHeight());
 
         VBox boxa = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
         boxa.add(Sensor1);
@@ -133,31 +132,27 @@ public class SensorContainer extends Container {
         boxa.add(Sensor4);
         boxa.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(boxa,LEFT + MaterialConstants.BORDER_SPACING, SAME,
-        boxv.getX()-MaterialConstants.COMPONENT_SPACING*3,
-        boxv.getHeight());
-        
+        sc.add(boxa, LEFT + MaterialConstants.BORDER_SPACING, SAME,
+                boxv.getX() - MaterialConstants.COMPONENT_SPACING * 3, boxv.getHeight());
+
         HBox box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
         box.add(SensorAS);
         box.add(PinAS);
         box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(box,SAME,AFTER+MaterialConstants.BORDER_SPACING,
-        FILL-MaterialConstants.BORDER_SPACING,MaterialConstants.EDIT_HEIGHT);
+        sc.add(box, SAME, AFTER + MaterialConstants.BORDER_SPACING, FILL - MaterialConstants.BORDER_SPACING,
+                MaterialConstants.EDIT_HEIGHT);
 
         box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
         box.add(onvalue);
         box.add(offvalue);
         box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(box,SAME,AFTER+MaterialConstants.COMPONENT_SPACING,
-        FILL-MaterialConstants.BORDER_SPACING,MaterialConstants.EDIT_HEIGHT);
+        sc.add(box, SAME, AFTER + MaterialConstants.COMPONENT_SPACING, FILL - MaterialConstants.BORDER_SPACING,
+                MaterialConstants.EDIT_HEIGHT);
 
-    
-        sc.add(SetSensorconfig,SAME,AFTER+MaterialConstants.COMPONENT_SPACING,
-        onvalue.getWidth(),MaterialConstants.EDIT_HEIGHT);
-
-        
+        sc.add(SetSensorconfig, SAME, AFTER + MaterialConstants.COMPONENT_SPACING, onvalue.getWidth(),
+                MaterialConstants.EDIT_HEIGHT);
 
     }
 

@@ -1,4 +1,5 @@
 package com.totalcross.sample.showData.ui;
+
 import com.totalcross.sample.showData.util.Colors;
 import com.totalcross.sample.showData.util.MaterialConstants;
 
@@ -12,9 +13,10 @@ import totalcross.ui.font.Font;
 import totalcross.ui.gfx.Color;
 import totalcross.ui.layout.HBox;
 import totalcross.ui.layout.VBox;
+
 public class ActuatorContainer extends Container {
     @Override
-    public void initUI(){
+    public void initUI() {
         super.initUI();
         ScrollContainer sc = new ScrollContainer(true, true);
         sc.transparentBackground = true;
@@ -63,16 +65,12 @@ public class ActuatorContainer extends Container {
 
         Edit PinA = new Edit(); // edit for recive pin for blink
         PinA.caption = "GPIO"; // Edit text
-        PinA.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% 
+        PinA.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%
         PinA.setMode(Edit.CURRENCY); // set mode numeric
         PinA.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
         PinA.setForeColor(Color.BLACK);
         PinA.setBackForeColors(Colors.GRAY, Color.BLACK);
         PinA.captionColor = Color.BLACK;
-        
-        
-        
-        
 
         Button SetValue = new Button("SetValue"); // button for save configuation of blink
         SetValue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));// set text size 3% of screen size
@@ -80,16 +78,15 @@ public class ActuatorContainer extends Container {
 
         Edit NewValue = new Edit();
         NewValue.caption = " Value";
-        NewValue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% 
+        NewValue.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%
         NewValue.setMode(Edit.CURRENCY); // set mode numeric
         NewValue.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
         NewValue.setForeColor(Color.BLACK);
         NewValue.setBackForeColors(Colors.GRAY, Color.BLACK);
         NewValue.captionColor = Color.BLACK;
-        
 
         // adicionando a tela
-        sc.add(actuators, CENTER, TOP,sc.getWidth(),MaterialConstants.EDIT_HEIGHT);
+        sc.add(actuators, CENTER, TOP, sc.getWidth(), MaterialConstants.EDIT_HEIGHT);
 
         VBox boxi = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
         boxi.add(indicator1);
@@ -98,8 +95,9 @@ public class ActuatorContainer extends Container {
         boxi.add(indicator4);
         boxi.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(boxi,RIGHT-MaterialConstants.BORDER_SPACING,AFTER+MaterialConstants.COMPONENT_SPACING,
-            MaterialConstants.EDIT_HEIGHT,(MaterialConstants.COMPONENT_SPACING+MaterialConstants.EDIT_HEIGHT)*4);
+        sc.add(boxi, RIGHT - MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                MaterialConstants.EDIT_HEIGHT,
+                (MaterialConstants.COMPONENT_SPACING + MaterialConstants.EDIT_HEIGHT) * 4);
 
         VBox boxv = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
         boxv.add(value1);
@@ -108,8 +106,7 @@ public class ActuatorContainer extends Container {
         boxv.add(value4);
 
         boxv.setSpacing(MaterialConstants.COMPONENT_SPACING);
-        sc.add(boxv,BEFORE - MaterialConstants.BORDER_SPACING, SAME,
-        PREFERRED,boxi.getHeight());
+        sc.add(boxv, BEFORE - MaterialConstants.BORDER_SPACING, SAME, PREFERRED, boxi.getHeight());
 
         VBox boxa = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
         boxa.add(Actuator1);
@@ -118,22 +115,18 @@ public class ActuatorContainer extends Container {
         boxa.add(Actuator4);
         boxa.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(boxa,LEFT + MaterialConstants.BORDER_SPACING, SAME,
-        boxv.getX()-MaterialConstants.COMPONENT_SPACING*3,
-        boxv.getHeight());
-        
+        sc.add(boxa, LEFT + MaterialConstants.BORDER_SPACING, SAME,
+                boxv.getX() - MaterialConstants.COMPONENT_SPACING * 3, boxv.getHeight());
+
         HBox box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
         box.add(PinA);
         box.add(NewValue);
         box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-        sc.add(box,SAME,AFTER+MaterialConstants.BORDER_SPACING,
-        FILL-MaterialConstants.BORDER_SPACING,MaterialConstants.EDIT_HEIGHT);
-        sc.add(SetValue,SAME,AFTER+MaterialConstants.COMPONENT_SPACING,
-        PinA.getWidth(),MaterialConstants.EDIT_HEIGHT);
-
-
-
+        sc.add(box, SAME, AFTER + MaterialConstants.BORDER_SPACING, FILL - MaterialConstants.BORDER_SPACING,
+                MaterialConstants.EDIT_HEIGHT);
+        sc.add(SetValue, SAME, AFTER + MaterialConstants.COMPONENT_SPACING, PinA.getWidth(),
+                MaterialConstants.EDIT_HEIGHT);
 
     }
 
