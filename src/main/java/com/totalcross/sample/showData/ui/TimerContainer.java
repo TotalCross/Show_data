@@ -20,22 +20,22 @@ public class TimerContainer extends Container {
                 // TODO Auto-generated method stub
                 super.initUI();
 
-                ScrollContainer sc1 = new ScrollContainer(true, true);
-                // sc1.setBackColor(Color.RED);
-                sc1.transparentBackground = true;
-                sc1.setBorderStyle(BORDER_ROUNDED);
+                ScrollContainer sc = new ScrollContainer(true, true);
+                // sc.setBackColor(Color.RED);
+                sc.transparentBackground = true;
+                sc.setBorderStyle(BORDER_ROUNDED);
 
-                add(sc1, LEFT, TOP, FILL, FILL);
+                add(sc, LEFT, TOP, FILL, FILL);
 
                 // scroll container 1 Timer e blink
-                Label timerLb = new Label("Timer"); // title of container
+                Label timerLb = new Label("Timer",CENTER); // title of container
                 timerLb.transparentBackground = true; // set background transparent
-                timerLb.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // define text size 3% of
-                                                                                           // screen size
+                timerLb.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // define text size 3% of
+                                                      // screen size
 
                 Edit pintEdit = new Edit(); // edit for recive pin for timer
                 pintEdit.caption = "GPIO"; // Edit text
-                pintEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // set text size 3% of
+                pintEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% of
                                                                                             // screen size
                 pintEdit.setMode(Edit.CURRENCY); // set mode numeric
                 pintEdit.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
@@ -43,7 +43,7 @@ public class TimerContainer extends Container {
                 pintEdit.captionColor = Color.BLACK;
 
                 Button savetBt = new Button("Save"); // button for save configuation of timer
-                savetBt.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight)));// set text size 3% of screen
+                savetBt.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));// set text size 3% of screen
                                                                                           // size
                 savetBt.setBackForeColors(Colors.BLUE, Colors.WHITE);
 
@@ -52,7 +52,7 @@ public class TimerContainer extends Container {
                 starttEdit.setValidChars("0123456789AMP");
                 starttEdit.setMode(Edit.NORMAL, true);
                 starttEdit.setKeyboard(Edit.KBD_TIME);
-                starttEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight)));
+                starttEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));
                 starttEdit.setBackForeColors(Colors.GRAY, Color.BLACK);
                 starttEdit.captionColor = Color.BLACK;
 
@@ -61,7 +61,7 @@ public class TimerContainer extends Container {
                 endtEdit.setValidChars("0123456789AMP");
                 endtEdit.setMode(Edit.NORMAL, true);
                 endtEdit.setKeyboard(Edit.KBD_TIME);
-                endtEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight)));
+                endtEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));
                 endtEdit.setBackForeColors(Colors.GRAY, Color.BLACK);
                 endtEdit.captionColor = Color.BLACK;
 
@@ -71,8 +71,8 @@ public class TimerContainer extends Container {
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
                 // add components for timer
-                sc1.add(timerLb, CENTER, TOP);
-                sc1.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                sc.add(timerLb, CENTER, TOP,sc.getWidth(),MaterialConstants.EDIT_HEIGHT);
+                sc.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
                 box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
@@ -80,15 +80,13 @@ public class TimerContainer extends Container {
                 box.add(savetBt);
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
-                sc1.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                sc.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
                 // blink
                 Edit pinbEdit = new Edit(); // edit for recive pin for blink
                 pinbEdit.caption = "GPIO"; // Edit text
-                pinbEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // set text size 3% of
-                                                                                            // screen
-                                                                                            // size
+                pinbEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3%                                                       // size
                 pinbEdit.setMode(Edit.CURRENCY); // set mode numeric
                 pinbEdit.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
                 pinbEdit.setForeColor(Color.BLACK);
@@ -96,14 +94,14 @@ public class TimerContainer extends Container {
                 pinbEdit.captionColor = Color.BLACK;
 
                 Button saveButton = new Button("Save"); // button for save configuation of blink
-                saveButton.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight)));// set text size 3% of
+                saveButton.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));// set text size 3% of
                                                                                              // screen
                                                                                              // size
                 saveButton.setBackForeColors(Colors.BLUE, Colors.WHITE);
 
                 Edit startEdit = new Edit("99" + Settings.timeSeparator + "99" + Settings.timeSeparator + "99");
                 startEdit.caption = "Start";
-                startEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // set text size 3% of
+                startEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% of
                                                                                              // screen size
                 startEdit.setMode(Edit.CURRENCY); // set mode numeric
                 startEdit.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
@@ -112,7 +110,7 @@ public class TimerContainer extends Container {
 
                 Edit endEdit = new Edit("99" + Settings.timeSeparator + "99" + Settings.timeSeparator + "99");
                 endEdit.caption = "End";
-                endEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // set text size 3% of screen
+                endEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% of screen
                                                                                            // size
                 endEdit.setMode(Edit.CURRENCY); // set mode numeric
                 endEdit.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
@@ -121,7 +119,7 @@ public class TimerContainer extends Container {
 
                 Edit repeatEdit = new Edit("99" + Settings.timeSeparator + "99" + Settings.timeSeparator + "99");
                 repeatEdit.caption = "Repeat";
-                repeatEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // set text size 3% of
+                repeatEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% of
                                                                                               // screen // size
                 repeatEdit.setMode(Edit.CURRENCY); // set mode numeric
                 repeatEdit.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
@@ -133,10 +131,10 @@ public class TimerContainer extends Container {
                 box.add(startEdit);
                 box.add(endEdit);
 
-                sc1.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                sc.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.BORDER_SPACING,
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
-                sc1.add(repeatEdit, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                sc.add(repeatEdit, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
                 box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
@@ -144,13 +142,13 @@ public class TimerContainer extends Container {
                 box.add(pinbEdit);
                 box.add(saveButton);
 
-                sc1.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                sc.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
                 // clear timer/ blink of pin
                 Edit pincEdit = new Edit(); // edit for recive pin for clear configuration of timer/blink
                 pincEdit.caption = "GPIO"; // Edit text
-                pincEdit.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight))); // set text size 3% of
+                pincEdit.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE)); // set text size 3% of
                                                                                             // screen size
                 pincEdit.setMode(Edit.CURRENCY); // set mode numeric
                 pincEdit.setKeyboard(Edit.KBD_NUMERIC); // lock all non-numeric keys for this edit
@@ -158,7 +156,7 @@ public class TimerContainer extends Container {
                 pincEdit.captionColor = Color.BLACK;
 
                 Button clearButton = new Button("Clear"); // button for clear configuration of timer/blink
-                clearButton.setFont(Font.getFont(true, (int) (0.03 * Settings.screenHeight)));// set text size 3% of
+                clearButton.setFont(Font.getFont(true, MaterialConstants.TEXT_SIZE));// set text size 3% of
                                                                                               // screen size
                 clearButton.setBackForeColors(Colors.BLUE, Colors.WHITE);
 
@@ -167,7 +165,7 @@ public class TimerContainer extends Container {
                 box.add(pincEdit);
                 box.add(clearButton);
 
-                sc1.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
+                sc.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.BORDER_SPACING,
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
         }

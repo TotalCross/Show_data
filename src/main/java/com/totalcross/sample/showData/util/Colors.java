@@ -9,6 +9,8 @@ public class Colors {
 	public static int WHITE = Color.WHITE;
 
 	public static int GRAY = Color.getRGB(241, 241, 241);
+	
+	public static int DARK_GRAY = Color.getRGB(50,50,50);
 
 	public static final int P_700 = 0x3e72c1;
 

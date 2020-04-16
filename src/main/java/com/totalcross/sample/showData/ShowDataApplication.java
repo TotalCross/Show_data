@@ -10,3 +10,4 @@ public class ShowDataApplication {
 }
 //500x310
 //1920x1080
+//720x480

@@ -21,4 +21,6 @@ public class MaterialConstants {
 
 	public static final int ICONS_SIZE = UnitsConverter.toPixels(28 + Control.DP);
 
+	public static final int TEXT_SIZE = UnitsConverter.toPixels(14 + Control.DP);
+
 }
