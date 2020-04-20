@@ -15,7 +15,7 @@ public class ShowData extends MainWindow {
     
     public ShowData() {
         super("Show Data", NO_BORDER);
-        setUIStyle(Settings.FLAT_UI);
+        setUIStyle(Settings.VISTA_UI);
         setDefaultFont(Font.getFont(Fonts.FONT_DEFAULT_SIZE));
 
     }
