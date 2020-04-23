@@ -7,7 +7,6 @@ import com.totalcross.sample.showData.ui.ShowDataContainer;
 import com.totalcross.sample.showData.util.Fonts;
 
 import totalcross.sys.Settings;
-import totalcross.sys.Vm;
 
 public class ShowData extends MainWindow {
     public static final String version = "1.0.0";
@@ -15,9 +14,8 @@ public class ShowData extends MainWindow {
     
     public ShowData() {
         super("Show Data", NO_BORDER);
-        setUIStyle(Settings.VISTA_UI);
+        setUIStyle(Settings.FLAT_UI);
         setDefaultFont(Font.getFont(Fonts.FONT_DEFAULT_SIZE));
-
     }
 
     static {

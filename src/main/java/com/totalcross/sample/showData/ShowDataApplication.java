@@ -4,7 +4,7 @@ import totalcross.TotalCrossApplication;
 
 public class ShowDataApplication {
     public static void main(String [] args) {
-        TotalCrossApplication.run(ShowData.class, "/r", "5443444B5AAEEB90306B00E4","/scr", "720x480");
+        TotalCrossApplication.run(ShowData.class, "/r", "5443444B5AAEEB90306B00E4","/scr", "848x480");
     }
 }
 //500x310

@@ -1,9 +1,0 @@
-top - 14:37:48 up  5:03,  2 users,  load average: 0.01, 0.02, 0.03
-Tasks:   2 total,   0 running,   2 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  8.3 us,  5.0 sy,  0.0 ni, 86.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :    872.9 total,    297.0 free,    165.8 used,    410.2 buff/cache
-MiB Swap:    100.0 total,     99.5 free,      0.5 used.    606.9 avail Mem 
-
-  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
- 6995 pi        20   0  119452  40532  28036 S  18.8   4.5   0:00.53 ./ShowData
- 7000 pi        20   0    1940    368    316 S   0.0   0.0   0:00.00 sh -c top+

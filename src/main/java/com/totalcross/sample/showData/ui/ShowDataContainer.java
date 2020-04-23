@@ -4,13 +4,7 @@ import com.totalcross.sample.showData.model.Memory;
 import com.totalcross.sample.showData.util.Colors;
 import com.totalcross.sample.showData.util.ReadMemory;
 
-import totalcross.io.BufferedReader;
-import totalcross.io.BufferedStream;
-import totalcross.io.File;
-import totalcross.io.IOException;
-import totalcross.io.IllegalArgumentIOException;
 import totalcross.sys.Settings;
-import totalcross.sys.Vm;
 // import totalcross.ui.Button;
 import totalcross.ui.Container;
 // import totalcross.ui.Edit;

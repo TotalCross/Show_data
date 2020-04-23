@@ -8,7 +8,6 @@ import totalcross.ui.Button;
 import totalcross.ui.Container;
 import totalcross.ui.Edit;
 import totalcross.ui.Label;
-import totalcross.ui.ScrollContainer;
 import totalcross.ui.font.Font;
 import totalcross.ui.gfx.Color;
 import totalcross.ui.layout.HBox;
@@ -20,10 +19,11 @@ public class TimerContainer extends Container {
                 // TODO Auto-generated method stub
                 super.initUI();
 
-                ScrollContainer sc = new ScrollContainer(true, true);
+                Container sc = new Container();
                 // sc.setBackColor(Color.RED);
                 sc.transparentBackground = true;
                 sc.setBorderStyle(BORDER_ROUNDED);
+                //sc.autoScroll = false;
 
                 add(sc, LEFT, TOP, FILL, FILL);
 
@@ -68,6 +68,8 @@ public class TimerContainer extends Container {
                 HBox box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
                 box.add(starttEdit);
                 box.add(endtEdit);
+                box.transparentBackground = true;
+
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
                 // add components for timer
@@ -78,6 +80,8 @@ public class TimerContainer extends Container {
                 box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
                 box.add(pintEdit);
                 box.add(savetBt);
+                box.transparentBackground = true;
+
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
 
                 sc.add(box, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING,
@@ -127,6 +131,8 @@ public class TimerContainer extends Container {
                 repeatEdit.captionColor = Color.BLACK;
 
                 box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
+                box.transparentBackground = true;
+
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
                 box.add(startEdit);
                 box.add(endEdit);
@@ -138,6 +144,8 @@ public class TimerContainer extends Container {
                                 FILL - MaterialConstants.BORDER_SPACING, MaterialConstants.EDIT_HEIGHT);
 
                 box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
+                box.transparentBackground = true;
+
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
                 box.add(pinbEdit);
                 box.add(saveButton);
@@ -161,6 +169,8 @@ public class TimerContainer extends Container {
                 clearButton.setBackForeColors(Colors.BLUE, Colors.WHITE);
 
                 box = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
+                box.transparentBackground = true;
+
                 box.setSpacing(MaterialConstants.COMPONENT_SPACING);
                 box.add(pincEdit);
                 box.add(clearButton);
